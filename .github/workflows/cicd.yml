@@ -1,0 +1,24 @@
+name: GuestBook CI/CD Pipeline
+
+on:
+  push:
+
+jobs:
+  ci-job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 실행환경 분석 <- 쉘 명령어 이용
+      run: |
+        hostnamectl
+        id
+        pwd
+        cat /proc/$(echo $$)/cmdline
+        env | sort
+        java -version
+    - name: Action 분석 <- Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+    - name: JAVA 버전 확인
+      run: java -version
