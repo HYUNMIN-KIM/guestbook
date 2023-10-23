@@ -1,7 +1,7 @@
 name: GuestBook CI/CD Pipeline
 
 env:
-  DOCKER_REPOSITORY: hyunmin/cicd_guestbook
+  DOCKER_REPOSITORY: kimhyunmin/cicd_guestbook
 
 on:
   push:
